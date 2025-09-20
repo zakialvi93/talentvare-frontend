@@ -1,7 +1,7 @@
 import { Layout, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
-import logoPng from "../../public/logo.png"
+import logoPng from "/logo.png"
 import avatar from "../assets/avatar.jpg"
 import type { NavbarItemsType } from "../utils/types/NavabarItemsType";
 
