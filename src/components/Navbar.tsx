@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const { Header } = Layout;
   const items: NavbarItemsType[] = [
     {
-      content: "Find Jobs",
+      content: "Find Me",
       styling: "!text-[16px] !font-default !font-[600] !text-primary"
     },
     {
