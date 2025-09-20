@@ -11,10 +11,10 @@ import type React from "react";
 const JobCard: React.FC = () => {
   return (
     <Card className="w-60 rounded-xl shadow-md border border-gray-200">
-      {/* Promoted Tag */}
-      <div className="text-xs font-medium text-gray-500 mb-2">Promoted</div>
 
-      {/* Logo + Title */}
+      <div className="text-xs font-medium text-black mb-2">Promoted</div>
+
+
       <div className="flex items-center space-x-3 mb-3">
         <div className="bg-indigo-100 rounded-lg p-2">
           <img src={teamsLogo} className="w-10 h-10" />
@@ -25,13 +25,13 @@ const JobCard: React.FC = () => {
         </div>
       </div>
 
-      {/* Location */}
+
       <div className="flex items-center text-sm text-gray-500 mb-1">
         <EnvironmentOutlined className="mr-1 text-gray-400" />
         Seattle, USA (Remote)
       </div>
 
-      {/* Time + Applicants */}
+
       <div className="flex items-center text-sm text-gray-500 mb-3">
         <ClockCircleOutlined className="mr-1 text-gray-400" />
         1 day ago ·{" "}
@@ -40,9 +40,9 @@ const JobCard: React.FC = () => {
         </span>
       </div>
 
-      {/* Apply + Bookmark */}
+
       <div className="flex items-center justify-between">
-        <Button type="primary" className="!bg-blue-600 !rounded-lg">
+        <Button>
           Apply Now
         </Button>
         <BookOutlined className="text-gray-500 cursor-pointer text-lg" />

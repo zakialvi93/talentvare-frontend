@@ -1,34 +1,19 @@
-import { Divider, Layout, Menu } from 'antd'
+import { Layout } from 'antd'
 import React from 'react'
-import JobList from './components/JobList';
 import Navbar from './components/Navbar';
 import Content from './components/Content';
+import LeftPanel from './components/LeftPanel';
+import NewContent from './components/NewContent';
 
 const App: React.FC = () => {
-  const { Sider } = Layout;
-
-  const siderStyle: React.CSSProperties = {
-    textAlign: 'center',
-    justifyContent: "center",
-    lineHeight: '120px',
-    color: '#fff',
-    backgroundColor: 'red',
-    display: "flex"
-  };
-
-
-
-
   return (
-    <Layout className='!min-h-[100vh]'>
+    <Layout className='!h-[1391px] !w-[1443px] flex flex-col'>
       <Navbar />
-      <Layout>
-        <Sider width="25%" style={siderStyle}>
-          Sider
-        </Sider>
-        <Content />
+      <Layout className='!w-full !h-[1321px] !bg-main'>
+        <LeftPanel />
+        {/* <Content /> */}
+        <NewContent />
       </Layout>
-      {/* <Footer style={footerStyle}>Footer</Footer> */}
     </Layout>
   )
 }

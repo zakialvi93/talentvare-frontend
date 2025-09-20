@@ -1,9 +1,34 @@
 @import "tailwindcss";
 
 @theme{
-  --color-main: #F4F4F4
+  --color-main: #f4f4f4;
+  --color-primary: #0154aa;
+  --color-secondary: #737a91;
+  --color-search: #f6f9ff;
+  --color-name: #333333;
+  --color-light: #585d6e;
+  --color-divider: 1px solid #e9ecef;
+
+  --font-default: "Neue Haas Grotesk Display Pro", sans-serif; 
 }
 
-.ant-input-affix-wrapper{
-  background-color: var(--color-main);
+.ant-btn{
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.ant-input-affix-wrapper,
+.ant-input-affix-wrapper:hover{
+  background-color: var(--color-search);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border:0;
+}
+
+.ant-layout-sider-children{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px
 }

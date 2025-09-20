@@ -1,63 +1,77 @@
 import { Layout, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
-import viteSvg from "../../public/vite.svg"
+import logoPng from "../../public/logo.png"
 import avatar from "../assets/avatar.jpg"
-
-const { Header } = Layout;
+import type { NavbarItemsType } from "../utils/types/NavabarItemsType";
 
 const Navbar: React.FC = () => {
-  const items: string[] = [
-    "Top Companies",
-    "Job Tracker",
-    "My Calendar",
-    "Documents",
-    "Messages",
-    "Notifications",
-
+  const { Header } = Layout;
+  const items: NavbarItemsType[] = [
+    {
+      content: "Find Jobs",
+      styling: "!text-[16px] !font-default !font-[600] !text-primary"
+    },
+    {
+      content: "Top Companies",
+      styling: "!text-[16px] !font-default !font-[500] !text-secondary hover:!text-primary"
+    },
+    {
+      content: "Job Tracker",
+      styling: "!text-[16px] !font-default !font-[500] !text-secondary hover:!text-primary"
+    },
+    {
+      content: "My Calendar",
+      styling: "!text-[16px] !font-default !font-[500] !text-secondary hover:!text-primary"
+    },
+    {
+      content: "Documents",
+      styling: "!text-[16px] !font-default !font-[500] !text-secondary hover:!text-primary"
+    },
+    {
+      content: "Messages",
+      styling: "!text-[16px] !font-default !font-[500] !text-secondary hover:!text-primary"
+    },
+    {
+      content: "Notifications",
+      styling: "!text-[16px] !font-default !font-[500] !text-secondary hover:!text-primary"
+    }
   ];
   return (
-    <Header className="!bg-white shadow-sm px-6 flex items-center !justify-between">
-      {/* Left: Logo + Menu */}
-      <div className="flex items-center space-x-8">
-        {/* Logo */}
-        <div className="flex items-center space-x-10">
+    <Header className="!bg-white !flex !flex-row !items-center !w-full !h-[70px] !p-0">
 
-          <img src={viteSvg} className="w-12 h-12" alt="Logo" />
+      <img
+        src={logoPng}
+        className="w-[41.09px] h-[38.45px] ml-[50.1px]"
+        alt="Logo"
+      />
 
-          <span className="text-blue-700 font-bold text-base">
-            Find Jobs
-          </span>
-        </div>
-
-        {/* Menu Links */}
-        <div className="flex items-center space-x-6 text-gray-600 text-sm font-medium">
-
-          {items.map((item: string, index: number) => (
-            <a
-              key={index + 1}
-              href="#"
-              className="!text-gray-700 hover:!text-blue-600 no-underline"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
+      <div className="flex flex-row gap-[25px] ml-[30px] items-center">
+        {items.map((item: NavbarItemsType, index: number) => (
+          <a
+            key={index + 1}
+            className={item.styling}
+          >
+            {item.content}
+          </a>
+        ))}
       </div>
 
-      {/* Right: Search + Button + Avatar */}
-      <div className="flex items-center space-x-4">
+      <div className="w-[423px] h-[39px] flex flex-row gap-[15px] ml-10">
+
         <Input
           prefix={<SearchOutlined />}
           placeholder="Search"
-          className="rounded-lg !w-48"
+          className="rounded-[8px] !w-[261px] !h-full"
         />
-        <Button type="primary" className="!bg-blue-600 rounded-lg">
+        <Button
+          className="!w-[147px] !h-full"
+        >
           Resume Builder
         </Button>
-
-        <img src={avatar} className="w-12 h-12 rounded-full" alt="Logo" />
       </div>
+
+      <img src={avatar} alt="Avatar" className="ml-[15px] w-[38px] h-[38px] rounded-[60px]" />
     </Header>
   );
 };
