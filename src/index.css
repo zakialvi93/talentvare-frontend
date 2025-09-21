@@ -32,3 +32,28 @@ flex-direction: column;
 align-items: center;
 gap: 10px
 }
+
+.custom-input::placeholder {
+  color: var(--color-light);       
+  font-size: 14px;     
+  font-weight: 500;
+  font-family: var(--font-default);
+}
+
+.ant-select-selection-placeholder {
+  color: var(--color-light) !important;      
+  font-size: 14px;     
+  font-weight: 500;
+  font-family: var(--font-default);
+  display: flex !important;
+  justify-content:center !important;
+}
+
+.ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ant-select-arrow{
+  color: var(--color-light) !important;
+}

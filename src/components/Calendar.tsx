@@ -15,7 +15,7 @@ const Calendar: React.FC = () => {
           allowClear={false}
           placeholder=""
           suffixIcon={<DownOutlined className='!text-name' />}
-          className='!w-10 !border-0 !border-transparent'
+          className='!w-10 !border-0 !border-transparent !shadow-none'
         />
       </div>
     </div>
