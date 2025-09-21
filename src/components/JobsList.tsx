@@ -1,20 +1,20 @@
 import React from 'react';
-import JobCard from './JobCard';
 import { Typography } from 'antd';
+import JobCard from './JobCard';
 import type { JobsListPropsInterface } from '../utils/interfaces/JobsListPropsInterface';
 
 const JobsList: React.FC<JobsListPropsInterface> = ({ numberOfJobs, category }) => {
   const { Text } = Typography;
   return (
-    <div className='w-full flex flex-col'>
+    <div className='w-full h-full flex flex-col items-start gap-3'>
 
-      <div className='flex flex-row gap-4 p-2 items-center'>
-        <Text className='!text-xl'>{category} Jobs</Text>
-        <Text className='text-sm !text-blue-700 underline'>See {category} Jobs</Text>
+      <div className='flex flex-row w-full gap-4 items-center'>
+        <Text className='!text-[18px] !font-default !font-[500] !text-name'>{category} Jobs</Text>
+        <Text className='!text-[14px] !font-default !font-[500] !text-primary !underline'>See {category} Jobs</Text>
       </div>
 
 
-      <div className="flex flex-wrap gap-3 p-2 justify-start">
+      <div className="flex flex-wrap gap-10 w-full h-full">
         {Array.from({ length: numberOfJobs }).map((_, index) => (
           <JobCard key={index + 1} />
         ))}

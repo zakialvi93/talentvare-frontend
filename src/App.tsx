@@ -1,9 +1,8 @@
 import { Layout } from 'antd'
 import React from 'react'
 import Navbar from './components/Navbar';
-// import Content from './components/Content';
 import LeftPanel from './components/LeftPanel';
-import NewContent from './components/NewContent';
+import Content from './components/Content';
 
 const App: React.FC = () => {
   return (
@@ -11,8 +10,7 @@ const App: React.FC = () => {
       <Navbar />
       <Layout className='!w-full !h-[1321px] !bg-main'>
         <LeftPanel />
-        {/* <Content /> */}
-        <NewContent />
+        <Content />
       </Layout>
     </Layout>
   )

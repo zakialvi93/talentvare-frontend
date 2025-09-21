@@ -1,51 +1,52 @@
-import { Card, Button } from "antd";
+import { Card, Button, Typography } from "antd";
 import {
   EnvironmentOutlined,
   ClockCircleOutlined,
-  BookOutlined,
 } from "@ant-design/icons";
-
+import bookMarkIcon from "../assets/bookmark.png"
 import teamsLogo from "../assets/teams-logo.svg";
 import type React from "react";
 
 const JobCard: React.FC = () => {
+  const { Text } = Typography;
   return (
-    <Card className="w-60 rounded-xl shadow-md border border-gray-200">
+    <Card
+      className="!w-[182px] !h-[164px] !rounded-[10px] !border-[1px] !border-job-card-border !flex !flex-col !items-start !bg-white !pl-5 !pr-5 !pt-2.5 !pb-2.5"
+    >
+      <div className="flex flex-col w-full">
 
-      <div className="text-xs font-medium text-black mb-2">Promoted</div>
+        <Text className="!font-default !font-[600] !text-[10px] !text-name">Promoted</Text>
 
-
-      <div className="flex items-center space-x-3 mb-3">
-        <div className="bg-indigo-100 rounded-lg p-2">
-          <img src={teamsLogo} className="w-10 h-10" />
+        <div className="flex flex-row w-full gap-2 mt-1">
+          <div
+            className="w-[40px] h-[40px] rounded-[9.11px] border-[0.76px] border-white bg-main flex justify-center items-center"
+          >
+            <img src={teamsLogo} alt="Teams Logo" />
+          </div>
+          <div className="flex flex-col">
+            <Text className="!font-default !font-[500] !text-[12px] !text-name">UI/UX Designer</Text>
+            <Text className="!font-default !font-[500] !text-[10px] !text-name">Teams</Text>
+          </div>
         </div>
-        <div>
-          <h2 className="text-base font-semibold">UI/UX Designer</h2>
-          <p className="text-gray-500 text-sm">Teams</p>
+
+        <div className="flex flex-row w-full gap-2 mt-1">
+
+          <div className="flex flex-col gap-1.5 mt-[2.5px]">
+            <EnvironmentOutlined className="!w-[9.6px] !h-[12px] !text-light" />
+            <ClockCircleOutlined className="!w-[9.6px] !h-[12px] !text-light" />
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <Text className="!font-default !font-[500] !text-[10px] !text-light">Seattle, USA (Remote)</Text>
+            <Text className="!font-default !font-[500] !text-[10px] !text-light">1 day ago  |  <span className="text-primary">22 applicants</span></Text>
+          </div>
+
         </div>
-      </div>
 
-
-      <div className="flex items-center text-sm text-gray-500 mb-1">
-        <EnvironmentOutlined className="mr-1 text-gray-400" />
-        Seattle, USA (Remote)
-      </div>
-
-
-      <div className="flex items-center text-sm text-gray-500 mb-3">
-        <ClockCircleOutlined className="mr-1 text-gray-400" />
-        1 day ago ·{" "}
-        <span className="ml-1 text-blue-600 cursor-pointer">
-          22 applicants
-        </span>
-      </div>
-
-
-      <div className="flex items-center justify-between">
-        <Button>
-          Apply Now
-        </Button>
-        <BookOutlined className="text-gray-500 cursor-pointer text-lg" />
+        <div className="w-full flex flex-row justify-between mt-3 items-center">
+          <Button className="!w-[115px] !h[34px]">Apply</Button>
+          <img src={bookMarkIcon} alt="Bookmark Icon" className="ml-2.5 w-[15px] h-[16px]" />
+        </div>
       </div>
     </Card>
   );

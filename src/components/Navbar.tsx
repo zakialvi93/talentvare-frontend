@@ -2,7 +2,7 @@ import { Layout, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import React from "react";
 import logoPng from "/logo.png"
-import avatar from "../assets/avatar.jpg"
+import avatar from "../assets/avatar.png"
 import type { NavbarItemsType } from "../utils/types/NavabarItemsType";
 
 const Navbar: React.FC = () => {
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
         <Input
           prefix={<SearchOutlined />}
           placeholder="Search"
-          className="rounded-[8px] !w-[261px] !h-full"
+          className="rounded-[8px] !w-[261px] !h-full !shadow-none"
         />
         <Button
           className="!w-[147px] !h-full"
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
         </Button>
       </div>
 
-      <img src={avatar} alt="Avatar" className="ml-[15px] w-[38px] h-[38px] rounded-[60px]" />
+      <img src={avatar} alt="Avatar" className="ml-[15px]" />
     </Header>
   );
 };

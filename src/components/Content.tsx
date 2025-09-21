@@ -1,26 +1,48 @@
 import React from 'react'
-import JobsList from './JobsList'
-import { Divider, Layout, Typography } from 'antd'
+import { Divider, Typography } from 'antd'
+import SearchFilters from './SearchFilters';
+import JobsList from './JobsList';
 
 const Content: React.FC = () => {
-  const { Content } = Layout;
-  const { Title, Text } = Typography;
+  const { Text, Title } = Typography;
   return (
-    <Content>
-      <div className='w-full ml-2'>
-        <Title className='!font-bold !text-[25px]'>
-          Find your Dream Job,
-          <span className='text-blue-600'> Albert!</span>
+    <div className='w-full h-full mt-[20px] ml-[15px] flex flex-col items-start pl-[5px] bg-transparent p-[20px]'>
+
+      <div className='w-full h-[48px] flex flex-col items-start'>
+        <Title className='!font-default !font-[600] !text-[22px] !text-name'>
+          Find Your Dream Job,
+          <span className='text-primary'> Albert!</span>
         </Title>
-        <Text className='!mt-0'>Explore the latest job openings and apply for the best opportunitites available today!</Text>
+        <Text className='!font-default !font-[500] !text-[14px] !text-light !mt-[-12px]'>
+          Explore the latest job openings and apply for the best opportunities available today!
+        </Text>
       </div>
-      <Divider className='!ml-2' />
-      <JobsList numberOfJobs={4} category='Featured' />
-      <Divider className='!ml-2' />
-      <JobsList numberOfJobs={8} category='Recommended' />
-      <Divider className='!ml-2' />
-      <JobsList numberOfJobs={8} category='Latest' />
-    </Content>
+
+      <SearchFilters />
+
+      <Divider className='custom-horizontal-divider' />
+
+      <JobsList
+        numberOfJobs={5}
+        category='Featured'
+      />
+
+      <Divider className='custom-horizontal-divider' />
+
+      <JobsList
+        numberOfJobs={10}
+        category='Recommended'
+      />
+
+      <Divider className='custom-horizontal-divider' />
+
+      <JobsList
+        numberOfJobs={10}
+        category='Latest'
+      />
+
+
+    </div>
   )
 }
 
